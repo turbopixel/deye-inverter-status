@@ -1,0 +1,16 @@
+{
+  "name": "turbopixel/deye-inverter",
+  "type": "project",
+  "description": "Read Status Informations from Deye Inverter",
+  "homepage": "https://hemk.es",
+  "license": "MIT",
+  "config": {
+    "platform": {
+      "php": "8.0.0"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "ext-dom": "*"
+  }
+}
