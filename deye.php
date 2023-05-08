@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Settings
+ * SETTINGS
  */
 $ipAddress   = "192.168.1.19"; // Local inverter ip address
 $credentials = "admin:admin"; // Default deye credentials: admin:admin
