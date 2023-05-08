@@ -1,8 +1,11 @@
-# deye-php
+# deye-inverter-status
 
-Read the current deye inverter status live with the PHP script. The script accesses the 
-inverter and reads out the status.html page, which contains all necessary information 
-from the inverter.
+Reads the current [deye inverter](https://www.deyeinverter.com/) status and returns a json object. 
+
+This script accesses the inverter and reads out the status.html page, which contains all 
+necessary information from the inverter.
+
+Works with **DEYE SUN600 / SUN800**.
 
 ## Installation
 
@@ -13,7 +16,7 @@ local computer or server.
 
 ## Execute
 
-The script is executed on the console. PHP must be installed!
+The script should be executed on the console. PHP must be installed!
 
 ```bash
 php -f deye.php
@@ -21,7 +24,7 @@ php -f deye.php
 
 **Output**
 
-*coming soon*
+*(coming soon)*
 
 ## License
 
