@@ -3,12 +3,13 @@
 /*
  * Settings
  */
-$ipAddress = "192.168.1.19";
+$ipAddress   = "192.168.1.19";
+$credentials = "admin:admin"; // Default deye credentials: admin:admin
 
 /*
  * Connect to the deye inverter and read the status.html page contents.
  */
-$auth     = base64_encode("admin:admin");
+$auth     = base64_encode($credentials);
 $context  = stream_context_create([
   "http" => [
     "header" => "Authorization: Basic {$auth}"
