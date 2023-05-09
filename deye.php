@@ -31,7 +31,7 @@ $result   = $selector->query('//script[@type="text/javascript"]');
 
 $resultset = [];
 
-if (is_array($result)) {
+if ($result instanceof DOMNodeList) {
   foreach ($result as $node) {
     if (is_object($node) && isset($node->textContent)) {
 
