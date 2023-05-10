@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * 1. Download this repository
+ * 2. Add your local ip address and inverter credentials
+ * 3. Run!
+ */
+
 require_once "vendor/autoload.php";
 
 $DeyeObj = new \Deye\Deye();

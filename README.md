@@ -48,8 +48,8 @@ git clone git@github.com:turbopixel/deye-inverter-status.git
 The library is designed to be very simple. Copy the following code, adjust 
 the variables and execute the PHP file on the console.
 
-**inverter.php**
-```php 
+**example.php ([open](https://github.com/turbopixel/deye-inverter-status/blob/master/deye.php))**
+```php
 <?php
 
 require_once "vendor/autoload.php";
@@ -66,7 +66,7 @@ print_r($resultset); // <- returns the inverter status information data as an Ar
 Run on console:
 
 ```bash
-php -f inverter.php
+php -f example.php
 ```
 
 ### Example output

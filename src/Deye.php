@@ -79,11 +79,11 @@ class Deye {
   protected function requestInverter() : string {
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://{$this->inverterIp}/status.html");
+    curl_setopt($ch, CURLOPT_URL, "http://{$this->getInverterIp()}/status.html");
     curl_setopt($ch, CURLOPT_TIMEOUT, 20); //timeout after 30 seconds
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-    curl_setopt($ch, CURLOPT_USERPWD, $this->credentials);
+    curl_setopt($ch, CURLOPT_USERPWD, $this->getCredentials());
     $pageContent = curl_exec($ch);
     $httpStatus  = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
     curl_close($ch);
