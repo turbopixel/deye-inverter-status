@@ -48,7 +48,7 @@ git clone git@github.com:turbopixel/deye-inverter-status.git
 The library is designed to be very simple. Copy the following code, adjust 
 the variables and execute the PHP file on the console.
 
-**example.php ([open](https://github.com/turbopixel/deye-inverter-status/blob/master/deye.php))**
+**example.php ([open](https://github.com/turbopixel/deye-inverter-status/blob/master/example.php))**
 ```php
 <?php
 
