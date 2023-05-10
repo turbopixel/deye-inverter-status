@@ -9,16 +9,19 @@ $credentials = "admin:admin"; // Default deye credentials: admin:admin
 /*
  * Connect to the deye inverter and read the status.html page contents.
  */
-$auth    = base64_encode($credentials);
-$context = stream_context_create([
-  "http" => [
-    "header" => "Authorization: Basic {$auth}"
-  ]
-]);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "http://{$ipAddress}/status.html");
+curl_setopt($ch, CURLOPT_TIMEOUT, 20); //timeout after 30 seconds
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+curl_setopt($ch, CURLOPT_USERPWD, $credentials);
+$pageHtml             = curl_exec($ch);
+$pageHeaderStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
+curl_close($ch);
 
-$pageHtml = file_get_contents("http://{$ipAddress}/status.html", false, $context);
-if (!$pageHtml) {
-  die("ERROR: network error!");
+// HTTP Status 200 = OK
+if ($pageHeaderStatusCode !== 200) {
+  die("ERROR: Network connection failed");
 }
 
 /*
