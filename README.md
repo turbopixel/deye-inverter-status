@@ -1,28 +1,75 @@
 # deye-inverter-status
 
-Reads the current [deye inverter](https://www.deyeinverter.com/) status and returns a json object.
+*Simple library for reading Deye inverter status information.*
 
-This script accesses the inverter and reads out the status.html page, which contains all
-necessary information from the inverter.
+Reads the current [deye inverter](https://www.deyeinverter.com/) status and returns all 
+information in an array. This script accesses the inverter and reads out the status.html page, 
+which contains all necessary information from the inverter.
 
 Works with **DEYE SUN600 / SUN800**.
 
+## Features
+
+* Lightweight - Portable with only one file
+* Easy - Easy to use, minimal requirements.
+* Free - Open source and licensed under MIT license
+
+## Requirement
+
+* PHP Version >= 8.2
+* PHP Modules ext-curl, ext-dom
+
 ## Installation
 
-Download the script, adjust the variables (see comment SETTINGS) and execute it on a
-local computer or server.
+**Install via composer**
 
-> It is important that the inverter is connected to the same network.
-
-## Execute
-
-The script should be executed on the console. PHP must be installed!
+Add *turbopixel/deye-inverter-status* to the composer.json file.
 
 ```bash
-php -f deye.php
+composer require turbopixel/deye-inverter-status
 ```
 
-**Output**
+And update composer
+
+```bash
+composer update
+```
+
+**Alternative** clone this repository:
+
+```bash
+git clone git@github.com:turbopixel/deye-inverter-status.git
+```
+
+## Example
+
+> It is important that the inverter is connected to the same network!
+
+The library is designed to be very simple. Copy the following code, adjust 
+the variables and execute the PHP file on the console.
+
+**inverter.php**
+```php 
+<?php
+
+require_once "vendor/autoload.php";
+
+$DeyeObj = new \Deye\Deye();
+$DeyeObj->setCredentials("admin:admin");
+$DeyeObj->setInverterIp("192.168.1.19");
+
+$resultset = $DeyeObj->inverterStatus();
+
+print_r($resultset); // <- returns the inverter status information data as an Array.
+```
+
+Run on console:
+
+```bash
+php -f inverter.php
+```
+
+### Example output
 
 ```json
 [
@@ -121,7 +168,7 @@ php -f deye.php
 ]
 ```
 
-### Variable description
+## Deye variable description
 
 | Variable name   | Type   | Description              |
 |-----------------|--------|--------------------------|
