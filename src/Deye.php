@@ -12,7 +12,7 @@ use Exception;
 /**
  * Deye Inverter Status.
  *
- * Simple php library to query the inverter status information.
+ * Simple library for reading Deye inverter status information.
  *
  * @version 1.1.0
  * @author Nico Hemkes
