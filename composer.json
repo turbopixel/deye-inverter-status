@@ -2,6 +2,7 @@
   "name": "turbopixel/deye-inverter-status",
   "type": "framework",
   "description": "Simple library for reading Deye inverter status information.",
+  "version": "1.1.0",
   "homepage": "https://hemk.es",
   "license": "MIT",
   "config": {
